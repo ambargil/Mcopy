@@ -36,12 +36,12 @@
 
             <div class="form-group">
               <label>NIT<span style="color:red">*</span> </label>
-              <input type="text" name="nit" class="form-control" placeholder="9999-999999-999-9">
+              <input type="number" pattern="[0-9]{14}" name="nit" class="form-control" placeholder="Ingrese los 14 numeros del NIT seguidos">
             </div>
             
             <div class="form-group">
               <label>Registro<span style="color:red">*</span> </label>
-              <input type="text" name="registro" class="form-control" placeholder="99999-9">
+              <input type="number" pattern="[0-9]{6}" name="registro" class="form-control" placeholder="Ingrese los 6 numeros del registro seguidos">
             </div>
 
             <div class="form-group">
@@ -96,12 +96,12 @@
 
             <div class="form-group">
               <label>NIT<span style="color:red">*</span> </label>
-              <input type="text" name="nit" id="nit" class="form-control" placeholder="Ingrese el NIT de la Empresa">
+              <input type="number" pattern="[0-9]{14}" name="nit" id="nit" class="form-control" placeholder="Ingrese los 14 numeros del NIT de la Empresa seguidos">
             </div>
 
             <div class="form-group">
               <label>Registro<span style="color:red">*</span> </label>
-              <input type="text" name="registro" id="registro" class="form-control" placeholder="Ingrese el registro de la Empresa">
+              <input type="number" pattern="[0-9]{6}" name="registro" id="registro" class="form-control" placeholder="Ingrese los 6 numeros del registro de la Empresa seguidos">
             </div>
 
             <div class="form-group">
