@@ -43,8 +43,8 @@ class EmpresaController extends Controller
         //
         $this->validate($request,[
             'nombre' => 'required',           
-            'nit' =>'required|regex:/^[0-9]{4}-[0-9]{6}-[0-9]{3}-[0-9]{1}$/',                      
-            'registro' =>'required|regex:/^[0-9]{5}-[0-9]{1}$/',
+            'nit' =>'required',                      
+            'registro' =>'required',
             'giro' =>'required',  
             'direccion' => 'required',
             'correo' => 'required',
@@ -100,8 +100,8 @@ class EmpresaController extends Controller
         //
         $this->validate($request,[
             'nombre' => 'required',           
-            'nit' =>'required|regex:/^[0-9]{4}-[0-9]{6}-[0-9]{3}-[0-9]{1}$/',                      
-            'registro' =>'required|regex:/^[0-9]{5}-[0-9]{1}$/',
+            'nit' =>'required',                      
+            'registro' =>'required',
             'giro' =>'required',   
             'direccion' => 'required',
             'correo' => 'required',

@@ -36,7 +36,7 @@ Ingresar Contacto
 
             <div class="form-group">
               <label>DUI<span style="color:red">*</span> </label>
-              <input type="text" name="dui" class="form-control" placeholder="99999999-9">
+              <input type="number" pattern="[0-9]{9}" name="dui" class="form-control" placeholder="Ingrese los 9 numero de dui seguido">
             </div>
 
             <div class="form-group">
@@ -59,7 +59,7 @@ Ingresar Contacto
                 </thead>
                 <tbody>
                     <tr>
-                        <td><input type="string" max="99999999" name="numero[]" required="" class="form-control"  placeholder="99999999"></td>
+                        <td><input type="number" pattern="[0-9]{8}" name="numero[]" required="" class="form-control"  placeholder="Ingrese los 8 numeros del telefono seguidos"></td>
                         <td class="remover"><a href="#" class="remove"><i class="fas fa-minus-circle"></i></a></td>
                     </tr>
                     </tr>
@@ -105,7 +105,7 @@ Ingresar Contacto
     
     function addRow() {
         var tr = '<tr>'  +
-            '<td><input type="string" name="numero[]" required="" class="form-control" min="1" placeholder="99999999"></td>' +
+            '<td><input type="number" pattern="[0-9]{8}" name="numero[]" required="" class="form-control" min="1" placeholder="Ingrese los 8 numeros del telefono seguidos"></td>' +
             '<td class="remover"><a href="#" class="remove"><i class="fas fa-minus-circle"></i></a></td>' +
             '</tr>';
         $('tbody').append(tr);

@@ -61,7 +61,7 @@ class ContactoController extends Controller
             'nombre' => 'required',
             'apellido' => 'required',
             'correo' => 'required',
-            'dui' =>'required|regex:/^[0-9]{8}-[0-9]{1}$/',
+            'dui' =>'required',
             'direccion' =>'required', 
             'empresa_id' =>'required',   
           ]);
@@ -80,7 +80,7 @@ class ContactoController extends Controller
               Telefono::insert($data2);     
             }
         }
-          return redirect('contac/ingresar')->with('success', 'El nuevo Contacto se guardó exitosamente');
+          return redirect('/contacto')->with('success', 'El nuevo Contacto se guardó exitosamente');
     }
 
     /**
@@ -135,9 +135,9 @@ class ContactoController extends Controller
             'nombre' => 'required',
             'apellido' => 'required',
             'correo' => 'required',
-            'dui' =>'required|regex:/^[0-9]{8}-[0-9]{1}$/',
+           'dui' =>'required',
             'direccion' =>'required', 
-            'empresa_id' =>'required',   
+           'empresa_id' =>'required',   
           ]);
 
           $data=$request->all();
