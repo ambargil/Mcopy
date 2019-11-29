@@ -117,7 +117,7 @@ class PromocionController extends Controller
         $promocion->precio_sin_descuento = $precioOriginal;
         $promocion->save();
 
-        return redirect('/promo/ingresar')->with('success', 'La Promocion se guardó exitosamente');
+        return redirect('/promocion')->with('success', 'La Promocion se guardó exitosamente');
     }
 
     public function show($id)

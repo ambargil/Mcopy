@@ -49,11 +49,13 @@ Pedidos
       </div>
     @endif
 
+  <!--  Para que aparezcan mensaje de aceptacion nuevamente en la pantalla verpedido
     @if (\Session::has('success'))
       <div class="alert alert-success">
         <p>{{ \Session::get('success') }}</p>
       </div>
     @endif
+    -->
 
     <a href="/pedido" class="btn btn-success ingresar">
       Registrar Pedido
@@ -63,7 +65,7 @@ Pedidos
       Recepcion de pedido
     </a>
 
-    <a href="/inventario" class="btn btn-info btnposi"> Regresar </a>
+    <a href="/inventario" class="btn btn-info"> Regresar </a>
 
 
     <br><br>

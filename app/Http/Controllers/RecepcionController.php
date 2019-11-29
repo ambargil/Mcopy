@@ -170,7 +170,7 @@ class RecepcionController extends Controller
     $pedidoRecibido->comentario = $request->comentario;
     $pedidoRecibido->save();
 
-    return redirect('/recepcion')->with('success','El Pedido ha sido recibido');
+    return redirect('/verpedidos')->with('success','El Pedido ha sido recibido');
   }
 
   /**
