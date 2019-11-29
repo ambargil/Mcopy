@@ -42,7 +42,7 @@ Inventario
 
    
 
-    <a href="/" class="btn btn-info btnposi"> Regresar </a>
+    <a href="/" class="btn btn-info"> Regresar </a>
 
 
     <br><br>
