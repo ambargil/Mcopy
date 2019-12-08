@@ -101,9 +101,6 @@ class CotizacionController extends Controller
         }
       }
 
-
-
-
     $cotizacion = new Cotizacion;
 
     $cotizacion->nombre_contacto = $request->input('nombre');

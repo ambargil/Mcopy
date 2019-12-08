@@ -114,7 +114,7 @@
       <button type="button" class="btn btn-success ingresar" data-toggle="modal" data-target="#nuevoRolModal">
         Ingresar Rol
       </button>
-      <a href="/" class="btn btn-info btnposi"> Regresar </a>
+      <a href="/users" class="btn btn-info"> Regresar </a>
     </div>
     <br>
     <div class="container">

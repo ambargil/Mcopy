@@ -30,7 +30,7 @@
 
           <div class="form-group">
             <label>Número de Registro <span style="color:red">*</span>  <span class="aclaracion"> Digitar los 6 dígitos sin guiones </span> </label>
-            <input type="text" pattern="[0-9]{7}" name="numero_registro" required="" id= "registro"  name="numero_registro" class="form-control" placeholder="Ingrese el número de registro">
+            <input type="text" pattern="[0-9]{6}" name="numero_registro" required="" id= "registro"  name="numero_registro" class="form-control" placeholder="Ingrese el número de registro">
           </div>
 
           <div class="form-group">
@@ -83,7 +83,7 @@
 
           <div class="form-group">
             <label>Número de Registro <span style="color:red">*</span>  <span class="aclaracion"> Digitar los 6 dígitos sin guiones </span> </label>
-            <input type="text" pattern="[0-9]{7}" name="numero_registro" id= "registro-actualizar"  name="numero_registro" class="form-control" placeholder="Ingrese el número de registro">
+            <input type="text" pattern="[0-9]{6}" name="numero_registro" id= "registro-actualizar"  name="numero_registro" class="form-control" placeholder="Ingrese el número de registro">
           </div>
 
           <div class="form-group">
