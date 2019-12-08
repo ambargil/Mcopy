@@ -19,12 +19,13 @@ Inventario
         </ul>
       </div>
     @endif
-
+<!--
     @if (\Session::has('success'))
       <div class="alert alert-success">
         <p>{{ \Session::get('success') }}</p> 
       </div>
     @endif
+    -->
 
     <a href="/salida/venta" class="btn btn-success ingresar">
       Registrar salida de productos
@@ -34,7 +35,7 @@ Inventario
       Tipos de salida
     </a>
 
-    <a href="/inventario" class="btn btn-info btnposi"> Regresar </a>
+    <a href="/inventario" class="btn btn-info"> Regresar </a>
 
 
     <br><br>

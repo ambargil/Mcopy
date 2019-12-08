@@ -50,7 +50,7 @@
                 @endif
               </div>
               <div class="form-group">
-                <label for="email" class="col-form-label">{{ __('E-Mail:') }}</label>
+                <label for="email" class="col-form-label">{{ __('E-Mail:(debe ser unico)') }}</label>
                 <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
                 @if ($errors->has('email'))
                   <span class="invalid-feedback" role="alert">
@@ -81,8 +81,8 @@
                 @endif
               </div>
               <div class="form-group">
-                <label for="telefono_usuario" class="col-form-label">{{ __('Teléfono:') }}</label>
-                <input type="text" class="form-control{{ $errors->has('telefono_usuario') ? ' is-invalid' : '' }}" name="telefono_usuario" value="{{ old('telefono_usuario') }}" required autofocus>
+                <label for="telefono_usuario" class="col-form-label">{{ __('Teléfono: (numero seguido de 8 caracteres)') }}</label>
+                <input type="tel" pattern="[0-9]{8}" class="form-control{{ $errors->has('telefono_usuario') ? ' is-invalid' : '' }}" name="telefono_usuario" value="{{ old('telefono_usuario') }}" required autofocus>
                 @if ($errors->has('telefono_usuario'))
                   <span class="invalid-feedback" role="alert">
                     <strong>{{ $errors->first('telefono_usuario') }}</strong>
@@ -91,8 +91,7 @@
               </div>
               <div class="form-group">
                 <label for="roles_id" class="col-form-label">{{ __('Rol:') }}</label>
-                <select class="custom-select" name="roles_id">
-                  <option selected="">Opciones</option>
+                <select class="custom-select" name="roles_id">                  
                   @foreach ($roles as $key => $rol)
                     <option value="{{$rol->id}}">{{$rol->nombre}}</option>
                   @endforeach
@@ -152,7 +151,7 @@
                 @endif
               </div>
               <div class="form-group">
-                <label for="email" class="col-form-label">{{ __('E-Mail:') }}</label>
+                <label for="email" class="col-form-label">{{ __('E-Mail:(debe ser unico)') }}</label>
                 <input type="email" id="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
                 @if ($errors->has('email'))
                   <span class="invalid-feedback" role="alert">
@@ -170,8 +169,8 @@
                 @endif
               </div>
               <div class="form-group">
-                <label for="telefono_usuario" class="col-form-label">{{ __('Teléfono:') }}</label>
-                <input type="text" id="telefono_usuario" class="form-control{{ $errors->has('telefono_usuario') ? ' is-invalid' : '' }}" name="telefono_usuario" value="{{ old('telefono_usuario') }}" required autofocus>
+                <label for="telefono_usuario" class="col-form-label">{{ __('Teléfono:(numero seguido de 8 caracteres)') }}</label>
+                <input type="tel" pattern="[0-9]{8}" id="telefono_usuario" class="form-control{{ $errors->has('telefono_usuario') ? ' is-invalid' : '' }}" name="telefono_usuario" value="{{ old('telefono_usuario') }}" required autofocus>
                 @if ($errors->has('telefono_usuario'))
                   <span class="invalid-feedback" role="alert">
                     <strong>{{ $errors->first('telefono_usuario') }}</strong>
@@ -181,7 +180,7 @@
               <div class="form-group">
                 <label for="roles_id" class="col-form-label">{{ __('Rol:') }}</label>
                 <select class="custom-select" id="roles_id" name="roles_id">
-                  <option selected="">Opciones</option>
+                  
                   @foreach ($roles as $key => $rol)
                     <option value="{{$rol->id}}">{{$rol->nombre}}</option>
                   @endforeach
@@ -238,7 +237,7 @@
       <button type="button" class="btn btn-success ingresar" data-toggle="modal" data-target="#nuevoUserModal">
         Ingresar Usuario
       </button>
-      <a href="/" class="btn btn-info btnposi"> Regresar </a>
+      <a href="/" class="btn btn-info "> Regresar </a>
       <br>
       <br>
       <a class="btn btn-success btn-recepcion" href="{{route('roles.index')}}">Roles</a>

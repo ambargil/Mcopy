@@ -276,7 +276,7 @@ class SalidaController extends Controller
       }
     }
 
-    return redirect('/salida')->with('success', 'Se ha registrado la salida');
+    return redirect('/versalidas')->with('success', 'Se ha registrado la salida');
   }
 
   public function nuevaSalidaVenta($tipoRequest, $fechaEmision, $total, $promocion, $correlativo_factura, $tipo_factura, $cantidad_promociones)
@@ -410,7 +410,7 @@ class SalidaController extends Controller
     } elseif ($request->factura == "Crédito fiscal") {
       self::guardarEntidad($request->entidad, $salida);
     }
-    return redirect('/salida/venta')->with('success', 'Se ha registrado la salida');
+    return redirect('/versalidas')->with('success', 'Se ha registrado la salida');
   }
 
   public function show(){

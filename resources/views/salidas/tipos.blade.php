@@ -103,7 +103,7 @@ Tipo
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-          <button type="submit" class="btn btn-danger">Eliminar</button>
+         <button type="submit" class="btn btn-danger">Eliminar</button> 
         </div>
       </form>
     </div>
@@ -141,6 +141,8 @@ Tipo
         <td> {{ $tipo->descripcion }} </td>
         <td width="" align="center">
           <a href="#" class="edit"><i class="fas fa-edit"></i></a>
+          
+          <!-- <a href="#" class="delete"><i class="fas fa-trash-alt"></i></a> -->
         </td>
       </tr>
       @empty

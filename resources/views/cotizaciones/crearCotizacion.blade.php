@@ -1,5 +1,4 @@
 
-
   {{-- Aqui va header y footer--}}
 @include('cotizaciones.appCotizaciones')
 
@@ -221,3 +220,4 @@ onload=function()
 
 
 {{-- @auth --}}
+

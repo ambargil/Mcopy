@@ -114,7 +114,7 @@ class PedidoController extends Controller
         }
       }
 
-      return redirect('pedido')->with('success', 'El Pedido se guardó exitosamente');
+      return redirect('verpedidos')->with('success', 'El Pedido se guardó exitosamente');
 
     }
 
