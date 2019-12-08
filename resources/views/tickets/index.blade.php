@@ -60,8 +60,11 @@
                         @endif
                         <td class="ocultar">{{$ticket->comentario}}</td>    
                         <td>
+                            <a href="#" class="detalle view"><i class="fas fa-eye"></i></a>
+                            <a href="#"><i class="detalle fas fa-file-pdf"></i></a>
                             <a href="{{route('tickets.edit', $ticket->id)}}"><i class="fas fa-edit"></i></a>
-                            <a href="#"><i class="fas fa-toolbox"></i></a>
+                            
+                           <!-- <a href="#"><i class="fas fa-toolbox"></i></a> -->
                         </td>
                     </tr>
                     @endforeach
