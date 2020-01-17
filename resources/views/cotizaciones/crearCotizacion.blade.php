@@ -1,6 +1,8 @@
 
-  {{-- Aqui va header y footer--}}
+
 @include('cotizaciones.appCotizaciones')
+
+<br><br><br>
 
   <div class="container">
     <div class="thing" id="wrapper">
@@ -14,7 +16,7 @@
 
     </div>
     <br>
-    <a class="btn btn-success" href="/">Bienvenido</a>
+   <!-- <a class="btn btn-success" href="{{ route('login') }}">Bienvenido</a> -->
   </div>
   <br>
   <div class="contenedor-destacados">
@@ -37,16 +39,21 @@
       </div>
     </div>
 
+<br><br>
+
   </div>
   <div class="container">
+  <br><br>
     <hr/>
     <div class="cotizacion">
+    <br><br>
       <h1 class="principal">HAZ TU COTIZACION</h1>
       <br><br>
       <form action="{{ action('CotizacionController@store') }}" method="POST" name="formCotizacion" onsubmit="return validar()" enctype="multipart/form-data">
         {{ csrf_field() }}
         <div class="lados">
           <div class="izquierda">
+          
             <div class="form-group">
               <input type="text" name="nombre" class="form-control alto" id="nombre" placeholder="Nombre" required>
             </div>
@@ -62,7 +69,7 @@
 
           <div class="derecha">
             <div class="form-group">
-              <textarea type="text" name="descripciontextarea" class="form-control" id="descripciontextarea" placeholder="descripcion" required></textarea>
+              <textarea type="text" name="descripciontextarea" class="form-control" id="descripciontextarea" placeholder="Descripcion" required></textarea>
             </div>
             <div class="form-group ocultar">
               <input type="text" name="descripcion" class="form-control" id="descripcion"  placeholder="Descripcion">
@@ -70,14 +77,16 @@
           </div>
         </div>
 
-
+        <br><br>
         <div class="centrado">
           <div class="form-group">
             <label>Imagen</label>
             <input type="file" name="imagen"  placeholder="Ingrese la imagen">
           </div>
         </div>
+        <br><br>
         <input type="submit" onclick="obtenerDescripcion()" class="btn btn-primary btn-cotizacion" value="Enviar">
+        <br><br><br><br>
       </form>
     </div>
   </div>
@@ -167,14 +176,12 @@ var imagenes= [];
 var imagenesEventos=new Array(
   ['images/eventos/1.jpg'],
   ['images/eventos/2.jpg'],
-  ['images/eventos/3.jpg'],
-  ['images/eventos/4.jpg']
+  ['images/eventos/3.jpg']
 );
 var imagenesSublimaciones=new Array(
   ['images/sublimaciones/1.jpg'],
   ['images/sublimaciones/2.jpg'],
-  ['images/sublimaciones/3.jpg'],
-  ['images/sublimaciones/4.jpg']
+  ['images/sublimaciones/3.jpg']
 );
 @foreach ($productos as $producto)
 

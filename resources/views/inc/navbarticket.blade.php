@@ -49,9 +49,7 @@
                   <span style="color:White"> <b> Reportes </b> <span class="sr-only">(current)</span> </span>  
                   </a>
                   <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Usuarios</a>
-                    <a class="dropdown-item" href="#">Roles</a>  
-                    <a class="dropdown-item" href="#">Salidas</a>                   
+                    <a class="dropdown-item" href="#">Tickets</a>                 
                   </div>
                 </li>
 

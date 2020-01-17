@@ -44,7 +44,7 @@
         <br>
             <div>
             <h3><strong>Telefonos:</strong></h3>
-            <div class="scroll">
+            <div class="">
                 <h3>
                     @php
                     $sum = 1;

@@ -41,6 +41,7 @@ Ingresar Ticket
             <label class="col-form-label">Comentario </label>
             <input type="text" name="comentario" class="form-control" placeholder="Comentario">
         </div>
+     
         <div class="form-group">
             <label class="col-form-label">Serie de Máquina <span style="color:red">*</label>
             <select class="custom-select" name="serie">
@@ -50,6 +51,20 @@ Ingresar Ticket
                 @endforeach
             </select>
         </div>
+
+        <div class="form-group">
+            <label class="col-form-label">Modelo de Máquina <span style="color:red">*</label>
+            <select class="custom-select" name="modelo">
+                <option selected="">Selecciona</option>
+                @foreach ($maquinas as $key => $maquina)
+                    <option value="{{$maquina->modelo}}">{{$maquina->modelo}}</option>
+                @endforeach
+            </select>
+        </div>
+
+
+        
+
         <br>
         <h4>Servicios</h4>
         <label class="col-form-label">Seleccione los servicios que desea agregar: </label>

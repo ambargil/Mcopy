@@ -46,7 +46,7 @@
         </div>
         <div>
           <h3><strong>Proveedores:</strong></h3>
-          <div class="scroll">
+          <div class="">
             <h3>
               @php
               $sum = 1;

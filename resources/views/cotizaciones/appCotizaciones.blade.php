@@ -35,20 +35,22 @@
   </header>
 
 
-
-
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <a class="navbar-brand" href="/crearcotizacion">MagicCopy</a>
+    <a class="navbar-brand" href="/crearcotizacion"><b>MagicCopy</b></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
     aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item dropdown">
-        <img src="/images/cart.jpeg" class="nav-link dropdown-toggle img-fluid" height="70px"
-        width="70px" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
-        aria-expanded="false">
+
+    <img src="/images/cart.jpeg"  height="40px"  width="40px" >
+
+      <li class="nav-item dropdown">     
+
+        <a class="nav-link" class="nav-link dropdown-toggle img-fluid" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">Carrito</a>
+        
         <div id="carrito" class="dropdown-menu" aria-labelledby="navbarCollapse">
           <table id="lista-carrito" class="table">
             <thead>
@@ -62,11 +64,15 @@
             <tbody></tbody>
           </table>
 
-          <a href="#" id="vaciar-carrito" class="btn btn-primary btn-block">Vaciar Carrito</a>
-          <a href="#" id="procesar-pedido" class="btn btn-danger btn-block">Procesar
-            Reserva</a>
-          </div>
+          <a href="#" id="vaciar-carrito" class="btn btn-primary btn-block">Vaciar</a>
+          <a href="#" id="procesar-pedido" class="btn btn-danger btn-block">Reservar</a>
+          </div>          
         </li>
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+
         <li class="nav-item">
           <a class="nav-link" href="#">Papeleria</a>
         </li>
@@ -80,15 +86,20 @@
           <a class="nav-link" href="#">Manualidades</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Lapices y Lapiceros</a>
+          <a class="nav-link" href="#">Lapiceros</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Articulos de Oficina</a>
+          <a class="nav-link" href="#">Oficina</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Varios</a>
         </li>
 
+        
+        <li class="nav-item" style="text-align:right">
+          <a class="navbar-brand"   href="{{ route('login') }}"> <b>Iniciar Sesion</b></a>
+        </li>
+        
       </ul>
     </div>
   </nav>
@@ -99,7 +110,7 @@
 
   {{-- <nav class="navbar navbar-expand-md bg-dark navbar-dark">
   <!-- Brand -->
-  <a class="navbar-brand" href="#">MagicCopy</a>
+  <a class="navbar-brand" href="#"><b>MagicCopy</b></a>
 
   <!-- Toggler/collapsibe Button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
