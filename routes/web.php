@@ -11,9 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function () { 
+   
+    return view('welcome');  
+    
 });
+
 Auth::routes();
 Route::resource('roles','RolController');
 Route::resource('users','UserController');
@@ -61,7 +64,7 @@ Route::get('/eventoPrincipal', 'EventoController@create')->name('evento.principa
 
 Route::get('/reservas', 'ReservaController@index');
 Route::put('reservas/{reserva}', 'ReservaController@update')->name('reserva.actualizar');
-Route::delete('/reservas/{reserva}','ReservaController@destroy')->name('reserva.eliminar');
+//Route::delete('/reservas/{reserva}','ReservaController@destroy')->name('reserva.eliminar');
 Route::get('/reservas/{reserva}','ReservaController@show')->name('reserva.mostrar');
 Route::get('/reserva/categoria','ReservaController@reservaCategoria')->name('reserva.categoria.mostrar');
 Route::get('/reserva/reservaConfirmacion', 'ReservaController@create')->name('reserva.guardar');
@@ -69,10 +72,10 @@ Route::post('/reserva/pdf','ReservaController@store')->name('reserva.almacenar')
 Route::get('pdfImpreso','ReservaController@generatePDF58');
 Route::get('/reserva/pdf/ver', 'ReservaController@datosPDF');
 
-// Route::get('pdfImpreso', function(){
-//   $pdf = PDF::loadView('reservas.pdf');
-//   return $pdf->download('archivo.pdf');
-// });
+//Route::get('pdfImpreso', function(){
+ //  $pdf = PDF::loadView('welcome');
+ //  return $pdf->download();
+ //})->name('pdfImpreso');
 
 
 // ------------- RUTAS PROMOCIONES -------------
@@ -106,16 +109,22 @@ Route::resource('/categoria','CategoriaController');
 Route::resource('/contacto','ContactoController');
 Route::resource('/empresa','EmpresaController');
 Route::resource('/telefono','TelefonoController');
-
-// ------------- RUTAS TICKETS ----------------
-Route::resource('tickets','TicketController');
-
-
-// ------------- RUTAS PIEZAS ----------------
-Route::resource('piezas','PiezaController');
-
 Route::get('/contac/ingresar', 'ContactoController@ingresar')->name('contacto.ingresarc');
 Route::put('/contac/ingresar', 'ContactoController@store');
 Route::get('/contac/{contacto}','ContactoController@show')->name('contacto.ver');
 Route::get('/contac/editar/{contacto}', 'ContactoController@actualizar')->name('contacto.actualizar');
 Route::put('/contac/editar/{contacto}', 'ContactoController@update')->name('contacto.update');
+
+Route::resource('/verReserva','RevController');
+//Route::delete('/reservas/{reserva}','RevController@destroy')->name('reserva.eliminar');
+
+
+// ------------- RUTAS TICKETS ----------------
+Route::resource('tickets','TicketController');
+Route::get('/ticket/{ticket}','TicketController@show')->name('tickets.ver');
+
+
+// ------------- RUTAS PIEZAS ----------------
+Route::resource('piezas','PiezaController');
+
+

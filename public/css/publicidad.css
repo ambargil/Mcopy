@@ -1,5 +1,5 @@
 body{
-    background-color: rgba(0,0,0,0.24)!important;
+    background-color: rgb(0, 190, 149)!important;
 }
 .cotizacion{
   max-width: 80%;
@@ -66,7 +66,7 @@ hr{
 /* --------HEADER DE LA PAGINA DE PUBLICIDAD------------ */
 div.hero{
     background-image: url(/images/logo1.jpg);
-    height: 60vh;
+    height: 75vh;
     background-position: top center;
     background-size: cover;
 }
@@ -88,6 +88,7 @@ nav.redes-sociales a {
   float: right;
 }
 
+
 /* ------------------NAVBAR------------------------- */
 .nav-link{
   font-size: 15px;
@@ -104,12 +105,12 @@ nav.redes-sociales a {
 
 /* ------------------PROMOCIONES DESLIZANTES ------------ */
 #wrapper{
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
 }
 .promo{
   width: 95%;
-  height: 300px;
+  height: 550px;
   margin: auto;
 }
 .logo{
@@ -142,11 +143,11 @@ nav.redes-sociales a {
   width: 100%;
 }
 .titulo-destacado{
-  color: rgba(0,0,0,0.24);
+  color: rgb(11, 139, 156);
 }
 .imagen{
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   background-size: contain;
   overflow: hidden;
   border-radius: 10px;

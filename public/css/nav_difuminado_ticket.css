@@ -1,4 +1,4 @@
 .nav_difuminado_ticket{
     background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 33%, rgba(0,212,255,1) 100%);
+    background: linear-gradient(90deg, rgb(97, 197, 3) 0%, rgb(65, 182, 29) 40%, rgb(128, 216, 46) 77%, rgb(154, 238, 76) 100%);
 }

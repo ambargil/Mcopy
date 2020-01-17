@@ -42,7 +42,7 @@ $(document).ready(function () {
 
         $('#estados_id').val(data[5]);
 
-        $('#editForm').attr('action', '/reservas/'+data[0]);
+        $('#editForm').attr('action', '/verReserva/'+data[0]);
         $('#editModal').modal('show');
       });
 

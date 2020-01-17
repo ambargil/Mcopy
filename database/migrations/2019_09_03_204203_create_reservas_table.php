@@ -22,6 +22,7 @@ class CreateReservasTable extends Migration
             $table->date('fecha_solicitud')->nullable(True);
             $table->date('fecha_vencimiento')->nullable(True);
             $table->string('correo_comprador')->nullable(True);
+            $table->string('descripcion_comprador')->nullable(True);
             $table->string('telefono_reserva')->nullable(True);
             $table->date('fecha_reclamo')->nullable(True);
             $table->float('precio_sin_descuento')->nullable(True);
