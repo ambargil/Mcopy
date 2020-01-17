@@ -22,15 +22,25 @@ class TicketController extends Controller
         $maquinas = Maquina::all();
         $categorias = Categoria::all();
         $contactos = Contacto::all();
-        $tickets = DB::table('categorias')
+        $tickets = Ticket::all();
+
+        $maquinaContacto = DB::table('contacto_maquina')
+      ->join('contactos', 'contacto_maquina.contacto_id', 'contactos.id')
+      ->join('maquinas', 'contacto_maquina.maquina_id', 'maquinas.id')
+      ->join('categorias','maquinas.categoria_id','categorias.id')
+      ->select('maquinas.id', 'contactos.nombre AS con_nombre', 'categorias.nombre', 'maquinas.marca', 'maquinas.modelo', 
+      'maquinas.serie', 'maquinas.contador', 'maquinas.descripcion')
+      ->get();
+
+      $tickets = DB::table('categorias')
         ->join('maquinas', 'maquinas.categoria_id', 'categorias.id')
         ->join('tickets','tickets.maquina_id','maquinas.id')
         ->select('tickets.id', 'tickets.codigo', 'tickets.estado', 'tickets.fecha_inicio', 'tickets.fecha_fin', 
         'tickets.total', 'tickets.comentario', 'maquinas.serie', 'categorias.nombre' )
         ->get();
 
-        return view('tickets.index',compact('tickets','maquinas','categorias','contactos'));
-    }
+      return view('tickets.index')->with('contactos',$contactos)->with('categorias',$categorias)->with('maquinas',$maquinas)->with('tickets',$tickets)->with('maquinaContacto',$maquinaContacto);
+       }
 
     /**
      * Show the form for creating a new resource.
@@ -42,6 +52,7 @@ class TicketController extends Controller
         //
         $categorias = Categoria::all();
         $maquinas = Maquina::all();
+       // $contactos = Contacto::all();
         return view('tickets.create',compact('categorias','maquinas'));
     }
 
@@ -66,6 +77,7 @@ class TicketController extends Controller
         ]);
 
         $ticket = new Ticket;
+        //$contacto = new Contacto;
         $ticket->codigo = $request->input('codigo');
         $ticket->estado = $request->input('estado');
         $ticket->fecha_inicio = $request->input('fecha_inicio');
@@ -77,6 +89,14 @@ class TicketController extends Controller
         ->select('maquinas.id')
         ->where('maquinas.serie','=',$request->input('serie'))
         ->get();
+        $maquina = DB::table('maquinas')
+        ->select('maquinas.id')
+        ->where('maquinas.modelo','=',$request->input('modelo'))
+        ->get();
+
+              
+        //$ticket->contactos()->sync($request->get('contacto_id'));
+
         $ticket->total = $ticket->arrendamiento + $ticket->reparacionpc + $ticket->reparacionfc;
         $ticket->maquina_id = $maquina[0]->id;
         $ticket->save();
@@ -93,6 +113,21 @@ class TicketController extends Controller
     public function show($id)
     {
         //
+        $maquinaContacto = DB::table('categorias')
+      ->join('maquinas', 'maquinas.categoria_id', 'categorias.id')
+      ->join('contacto_maquina','maquinas.id','contacto_maquina.maquina_id')
+      ->join('contactos', 'contacto_maquina.contacto_id', 'contactos.id')
+      ->select('categorias.nombre as catnombre', 'maquinas.marca', 'maquinas.modelo', 'maquinas.contador', 'maquinas.serie', 'contactos.nombre as connombre', 'contactos.apellido', 'contactos.correo', 'contactos.dui', 'contactos.direccion')
+      ->where('maquinas.id', $id)
+      ->get();
+
+        //$maquinas=Maquina::find($id);
+        $tickets = Ticket::find($id);        
+        $maquinas = Maquina::all();
+        $categorias = Categoria::all();
+        $contactos = Contacto::all();
+        
+        return view('tickets.ver', compact('maquinas','contactos','categorias','tickets','maquinaContacto'));
     }
 
     /**
