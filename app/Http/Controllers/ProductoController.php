@@ -87,6 +87,7 @@ class ProductoController extends Controller
       $articulo->imagen = $nombreDeArchivoAlmacenar;
 
       $articulo->save();
+      
       $articulo->proveedores()->sync($request->get('proveedor_id'));
 
       return redirect('producto')->with('success', 'El nuevo Producto se guardó exitosamente');

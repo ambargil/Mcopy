@@ -88,17 +88,7 @@ class MaquinaController extends Controller
      */
     public function show($id)
     {
-        //join para traer de la tabla intermedia
-
-       //$maquinaContacto = DB::select("select contactos.nombre,maquinas.categoria_id,maquinas.marca,maquinas.modelo,
-       //maquinas.contador,maquinas.serie,maquinas.descripcion 
-        //from maquinas,contactos,contacto_maquina 
-        //where 
-        //maquinas.id = contacto_maquina.maquina_id and 
-        //contacto_maquina.contacto_id = contactos.id");
-
-
-        $maquinaContacto = DB::table('categorias')
+       $maquinaContacto = DB::table('categorias')
       ->join('maquinas', 'maquinas.categoria_id', 'categorias.id')
       ->join('contacto_maquina','maquinas.id','contacto_maquina.maquina_id')
       ->join('contactos', 'contacto_maquina.contacto_id', 'contactos.id')
@@ -109,7 +99,6 @@ class MaquinaController extends Controller
         $maquinas=Maquina::find($id);
         //$categorias = Categoria::all();
         return view('maquinas.visualizar',compact('maquinaContacto', 'maquinas','contactos','categorias'));
-        //,compact('maquinaContacto', 'maquinas'));
     }
 
     /**

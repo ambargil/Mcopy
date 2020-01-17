@@ -103,6 +103,8 @@ class ReservaController extends Controller
       // dd($request);
       $this->validate($request,[
         // 'codigo'=>'required',
+       //'nombre' => 'required',
+       // 'correo' => 'required',
         'inputTotal'=>'required'
       ]);
 
@@ -141,6 +143,8 @@ class ReservaController extends Controller
 
 
       $reserva = new Reserva;
+      //$reserva->nombre = $request->input('nombre');
+     // $reserva->correo_comprador = $request->input('correo');
       $reserva->codigo_reserva = $codigoReserva;
       $reserva->precio_sin_descuento = $request->input('inputTotal');
       $reserva->telefono_reserva = 12345678;
@@ -186,6 +190,8 @@ class ReservaController extends Controller
     {
         //
     }
+
+    
 
     /**
      * Update the specified resource in storage.
