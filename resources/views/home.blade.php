@@ -4,8 +4,8 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Inicio</div>
+            
+                
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,12 +14,14 @@
                         </div>
                     @endif
 
-                    Bienvenido a Magic Copy
+                <a href="{{ url('/crearcotizacion') }}">
+                <img src="/images/mlogo.png" alt="logo" height="700" width="700">
+                </a>
 
-                    <a class="btn btn-success" href="/tickets">Modulo de fotocopiadoras</a>
-                </div>
-            </div>
         </div>
     </div>
 </div>
 @endsection
+  
+
+

@@ -4,7 +4,11 @@
 @endsection
 @section('content')
   <div class="text-center">
+
+
+
     <h1>BIENVENIDO</h1>
+    
    
   </div>
 @endsection

@@ -7,6 +7,7 @@
   content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/estilo.css">
+  <link rel="stylesheet" href="{{asset('css/app.css')}}">
   <script src="js/popper.min.js"></script>
 </head>
 
@@ -88,7 +89,7 @@
                 </tr>
 
               </table>
-              <a href="/pdfImpreso">Crear PDf</a>
+              
             </div>
           </div>
         </form>

@@ -28,7 +28,7 @@
               <h3><strong>Nombre: </strong><label>{{$reserva->nombre}}</label></h3>
             </div>
             <div class="">
-              <h3><strong>Descripcion: </strong><label>{{$reserva->fecha_solicitud}}</label></h3>
+              <h3><strong>Descripcion: </strong><label>{{$reserva->descripcion_comprador}}</label></h3>
             </div>
             <div class="">
               <h2><strong>Estado: </strong><label>
@@ -38,18 +38,18 @@
                   @endif
                 @endforeach</label></h2>
               </div>
-            <div class="">
+            <!--<div class="">
               <h3><strong>Fecha de vencimiento: </strong><label>{{$reserva->fecha_vencimiento}}</label></h3>
-            </div>
+            </div>-->
             <div class="">
               <h3><strong>Correo: </strong><label>{{$reserva->correo_comprador}}</label></h3>
             </div>
-            <div class="">
+            <!--<div class="">
               <h3><strong>Telefono: </strong><label>{{$reserva->telefono_reserva}}</label></h3>
-            </div>
+            </div> 
             <div class="">
               <h3><strong>Fecha de Reclamo: </strong><label>{{$reserva->fecha_reclamo}}</label></h3>
-            </div>
+            </div>-->
         </div>
 
         <br><br>

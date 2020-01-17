@@ -11,6 +11,50 @@
 @section('content')
   @auth
 
+  {{-- Comienzo Add Modal --}}
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Ingresar Reserva</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <p><span style="color:red">*</span> <span class="campoObligatorio">Campo obligatorio</span></p>
+
+
+      <form action="{{ action('RevController@store') }}" method="POST" enctype="multipart/form-data">
+        <div class="modal-body">
+          {{ csrf_field() }}
+
+            <div class="form-group">
+              <label>Nombre<span style="color:red">*</span> </label>
+              <input type="text" name="nombre" class="form-control" placeholder="Ingrese el nombre del cliente">
+            </div>
+
+            <div class="form-group">
+              <label>Correo<span style="color:red">*</span> </label>
+              <input type="text" name="correo" class="form-control" placeholder="Ingrese el correo">
+            </div>
+
+            <label>Descripcion<span style="color:red"></span> </label>
+              <input type="text" name="descripcion" class="form-control" placeholder="Ingrese la descripcion de la reserva">
+            </div>
+           
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+{{-- Final Add Modal --}}
+
 <!--Start Edit Modal -->
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -30,6 +74,7 @@
           <div class="form-group">
             <label>Estado</label>
             <select name="estados_id" id="estados_id[]" class="form-control">
+
               @foreach ($estados as $estado)
                   <option value="{{ $estado->id }}">{{ $estado->nombre }}</option>
               @endforeach
@@ -61,7 +106,7 @@
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
-    <form action="/reserva" method="POST" id="deleteForm">
+    <form action="/reservas" method="POST" id="deleteForm">
 
       {{ csrf_field() }}
       {{ method_field('DELETE') }}
@@ -94,6 +139,7 @@
       <button type="button" class="btn btn-success ingresar" data-toggle="modal" data-target="#exampleModal">
         Ingresar Reserva
       </button>
+
       <a href="#" class="btn btn-info"> Regresar </a>
       <br><br>
 
@@ -103,7 +149,8 @@
             <th scope="col" class="colorth ocultar">ID</th>
             <th scope="col" class="colorth">#Reserva</th>
             <th scope="col" class="colorth">Nombre Cliente</th>
-            <th scope="col" class="colorth">Fecha</th>
+            <th scope="col" class="colorth ocultar">Fecha</th>
+            <th scope="col" class="colorth">Correo</th>
             <th scope="col" class="colorth">Estado</th>
             <th scope="col" class="colorth">Accion</th>
           </tr>
@@ -115,7 +162,8 @@
               <td class="ocultar"> {{ $reserva->id }} </td>
               <td> {{ $reserva->codigo_reserva }} </td>
               <td> {{ $reserva->nombre }} </td>
-              <td> {{ $reserva->fecha_solicitud }} </td>
+              <td class="ocultar"> {{ $reserva->fecha_solicitud }} </td>
+              <td> {{ $reserva->correo_comprador }} </td>
               @foreach ($estados as $estado)
                 @if ($reserva->estado_reserva_id == $estado->id)
                    <td> {{ $estado->nombre }} </td>
@@ -123,9 +171,8 @@
               @endforeach
               <td>
                 <a href="{{ route('reserva.mostrar', $reserva->id) }}" class="detalle view"><i class="fas fa-eye"></i></a>
-                <a href="#"><i class="detalle fas fa-file-pdf"></i></a>
-                <a href="#" class="edit actualizar"><i class="fas fa-edit"></i></a>
-                <a href="#" class="delete borrar"><i class="fas fa-trash-alt"></i></a>
+                <!--<a href="#" class="edit actualizar"><i class="fas fa-edit"></i></a>
+                <a href="#" class="delete borrar"><i class="fas fa-trash-alt"></i></a> -->
                </td>
              </tr>
             @endforeach

@@ -69,7 +69,7 @@
                            
             <td>
                  <a href="{{ route('contacto.ver', $contactos->id) }}" class="detalle view"><i class="fas fa-eye"></i></a>
-                 <a href=" {{ route('contacto.actualizar', $contactos->id) }} " class="edit"><i class="fas fa-edit"></i></a>
+                <!-- <a href=" {{ route('contacto.actualizar', $contactos->id) }} " class="edit"><i class="fas fa-edit"></i></a> -->
           </td>
            </tr>
               @endforeach
